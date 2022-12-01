@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="home.js"></script>
+</head>
+<!--<body onload="GetURLParameters()"> -->
+<body onload="GetURLParameters()">
+    <!--\|/id here-->
+    <p id="myText"></p>
+    <p id="myTextTag"></p>
+    <script>
+        var usertag = document.getElementById("myText");
+        var passtag = document.getElementById("myTextTag");
+        <!--...and here we are actually affecting the text.-->
+        usertag.innerHTML = this.user;
+        passtag.innerHTML = this.pass
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="login.js"></script>
+    <link href="login.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div>
+    <div>
+        <ul id="listuser">
+            <h3> All users here: </h3>
+        </ul>
+    </div>
+
+    <form onsubmit="return false">
+        <div class="container">
+            <div class="username">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id= "uname" name="uname" required>
+            </div>
+            <div class="password">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+            </div>
+            <button type="submit" onclick="Login(uname.value, psw.value)">Login</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
