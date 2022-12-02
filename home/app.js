@@ -19,7 +19,10 @@ function MainController()
 
     this.shown = this.HOME;
 
-    GetUserPass = function()
+    this.email = "";
+    this.major = "";
+
+    this.GetUserInfo = function()
     {
         var user = '', pass = '';
         var sPageURL = window.location.search.substring(1);
@@ -37,36 +40,48 @@ function MainController()
             }
         }
         if(user == null || user === "") {
-            user = sampleuser();
-            pass = samplepass();
+            user = this.sampleuser();
+            pass = this.samplepass();
         }
-        return {user, pass};
+        var info = this.LoadData(user, pass);
+        var email = info["email"];
+        var major = info["major"];
+        return {user, pass, email, major};
     };
 
-    LoadData = function(user, pass) {
+    this.LoadData = function(user, pass) {
+        var email = "email";
+        var major = "major";
+        return {email, major};
+    };
+
+    this.getFullCourseInfo = function () {
 
     };
 
-    getFullCourseInfo = function () {
-
-    };
-
-    sampleuser = function () {
+    this.sampleuser = function () {
         return "sampleUser";
     };
 
-    samplepass = function () {
+    this.samplepass = function () {
         return "samplePass";
     };
 
-    var loginInfo = GetUserPass();
-    this.user = loginInfo["user"];
-    this.pass = loginInfo["pass"];
-    LoadData(this.user, this.pass);
-    this.couresInfo = getFullCourseInfo();
+    var userInfo = this.GetUserInfo();
+    this.user = userInfo["user"];
+    this.pass = userInfo["pass"];
+    this.email = userInfo["email"];
+    this.major = userInfo["major"];
+    this.couresInfo = this.getFullCourseInfo();
 
-    logout = function() {
+    this.logout = function() {
         window.location.href =  '../login';
     };
+
+    this.getPossibleMajors = function () {
+        var list = ["Major 1", "Major 2"];
+        return list;
+    }
+
 }
 

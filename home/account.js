@@ -1,5 +1,5 @@
 angular.module('degreeplanner').component('account', {
-    controller: [ACCController],
+    controller: ACCController,
     bindings: {
         user: "<",
         pass: "<",
@@ -7,7 +7,7 @@ angular.module('degreeplanner').component('account', {
         major: "=",
         possibleMajors: '<'
     },
-    templateUrl: "../htmlTemplates/account.html"
+    templateUrl: "htmlTemplates/account.html"
 
 });
 
@@ -17,18 +17,18 @@ function ACCController() {
 
     this.m = this.PROTECTED;
 
-    logout = function() {
+    this.logout = function() {
         window.location.href =  '../login';
     };
 
-    saveMajor = function() {
+    this.saveMajor = function() {
 
 
     };
 
-    displayPassword = function() {
+    this.displayPassword = function() {
         var passLength = "";
-        for( var i =0; i < pass.length; i++)
+        for( var i =0; i < this.pass.length; i++)
             passLength +="*";
         return passLength;
     };

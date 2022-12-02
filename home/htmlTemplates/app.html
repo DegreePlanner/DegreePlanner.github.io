@@ -9,7 +9,7 @@
     </div>
     <div id="navRight">
         <div id="navHome" ng-click="$ctrl.shown=$ctrl.HOME">
-            <img src="icons/home.png">
+            <img class="navicon" src="icons/home.png">
         </div>
         <div id="navAccount" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
             {{$ctrl.user}}
@@ -27,7 +27,7 @@
     <div id="Boxes">
         <div id="AccountBox" ng-click="$ctrl.shown=$ctrl.ACCOUNT" >
             <div class="boxIcon">
-                <img src="icons/account.png">
+                <img class="mainIcon" src="icons/account.png">
             </div>
             <div class="boxLabel">
                 Account Information
@@ -35,7 +35,7 @@
         </div>
         <div id="ScheduleBox" ng-click="$ctrl.shown=$ctrl.SCHEDULE">
             <div class="boxIcon">
-                <img src="icons/schedule.png">
+                <img class="mainIcon" src="icons/schedule.png">
             </div>
             <div class="boxLabel">
                 Course Schedule
@@ -43,7 +43,7 @@
         </div>
         <div id="RecommendationsBox" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" >
             <div class="boxIcon">
-                <img src="icons/rec.png">
+                <img class="mainIcon" src="icons/rec.png">
             </div>
             <div class="boxLabel">
                 Course Recommendations
@@ -51,7 +51,7 @@
         </div>
         <div id="RequirementsBox" ng-click="$ctrl.shown=$ctrl.REQUIREMENTS" >
             <div class="boxIcon">
-                <img src="icons/req.png">
+                <img class="mainIcon" src="icons/req.png">
             </div>
             <div class="boxLabel">
                 View Requirements
@@ -59,7 +59,7 @@
         </div>
         <div id="AddCourseBox"  ng-click="$ctrl.shown=$ctrl.COURSE">
             <div class="boxIcon">
-                <img src="icons/course.png">
+                <img class="mainIcon" src="icons/course.png">
             </div>
             <div class="boxLabel">
                 Add or Remove Courses Taken or Requirement Exceptions
@@ -68,7 +68,7 @@
     </div>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.ACCOUNT" id="accountScreen">
-    <account></account>
+    <account user="$ctrl.user" email="$ctrl.email" pass="$ctrl.pass" major="$ctrl.major" possible-majors="$ctrl.getPossibleMajors()"></account>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.SCHEDULE"  id="schedScreen">
     <course-schedule courses=""></course-schedule>
