@@ -1,71 +1,84 @@
 <div id="navbar">
-    <div id="navtitle">
-        Degree Planner
-    </div>
-    <div id="navLogo">
+    <div id="navLeft">
+        <div id="navtitle">
+            Degree Planner
+        </div>
+        <div id="navLogo">
 
+        </div>
     </div>
-    <div id="navHome" ng-click="$ctrl.shown=$ctrl.HOME">
+    <div id="navRight">
+        <div id="navHome" ng-click="$ctrl.shown=$ctrl.HOME">
 
-    </div>
-    <div id="navAccount" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
-        {{$ctrl.user}}
+        </div>
+        <div id="navAccount" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
+            {{$ctrl.user}}
+        </div>
+        <div id="logout" ng-click="$ctrl.logout()">
+            Logout
+        </div>
     </div>
 </div>
 
 <div ng-if="$ctrl.shown===$ctrl.HOME" id="homeScreen">
     <div id="Welcome">
-
+        Welcome {{$ctrl.user}}
     </div>
     <div id="Boxes">
-        <div id="AccountBox">
+        <div id="AccountBox" ng-click="$ctrl.shown=$ctrl.ACCOUNT" >
+            <div class="boxIcon">
 
+            </div>
+            <div class="boxLabel">
+                Account Information
+            </div>
         </div>
-        <div id="ScheduleBox">
+        <div id="ScheduleBox" ng-click="$ctrl.shown=$ctrl.SCHEDULE">
+            <div class="boxIcon">
 
+            </div>
+            <div class="boxLabel">
+                Course Schedule
+            </div>
         </div>
-        <div id="RecommendationsBox">
+        <div id="RecommendationsBox" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" >
+            <div class="boxIcon">
 
+            </div>
+            <div class="boxLabel">
+                Course Recommendations
+            </div>
         </div>
-        <div id="RequirementsBox">
+        <div id="RequirementsBox" ng-click="$ctrl.shown=$ctrl.REQUIREMENTS" >
+            <div class="boxIcon">
 
+            </div>
+            <div class="boxLabel">
+                View Requirements
+            </div>
         </div>
-        <div id="AddCourseBox">
+        <div id="AddCourseBox"  ng-click="$ctrl.shown=$ctrl.COURSE">
+            <div class="boxIcon">
 
+            </div>
+            <div class="boxLabel">
+                Add or Remove Courses Taken or Requirement Exceptions
+            </div>
         </div>
     </div>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.ACCOUNT" ng-click="$ctrl.shown=$ctrl.ACCOUNT" id="accountScreen">
-    <div id="Name" class="editableAccountInfo">
-        <div class="label4AccountInfo">
-            Name
-        </div>
-    </div>
-    <div id="email" class="editableAccountInfo">
-        <div class="label4AccountInfo">
-            Email
-        </div>
-    </div>
-    <div id="password" class="editableAccountInfo, passwordBox">
-        <div class="label4AccountInfo">
-            Password
-        </div>
-    </div>
-    <div id="Major" class="editableAccountInfo">
-        <div class="label4AccountInfo">
-            Major
-        </div>
-    </div>
+<div ng-if="$ctrl.shown===$ctrl.ACCOUNT" id="accountScreen">
+    <account></account>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.SCHEDULE" ng-click="$ctrl.shown=$ctrl.SCHEDULE" id="schedScreen">
-
+<div ng-if="$ctrl.shown===$ctrl.SCHEDULE"  id="schedScreen">
+    <course-schedule courses=""></course-schedule>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" id="recScreen">
-
+<div ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" id="recScreen">
+    <rec data=""></rec>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" ng-click="$ctrl.shown=$ctrl.REQUIREMENTS" id="reqScreen">
-
+<div ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" id="reqScreen">
+    <req coursesCompleted="" major=""></req>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.COURSE" ng-click="$ctrl.shown=$ctrl.COURSE" id="courseScreen">
+<div ng-if="$ctrl.shown===$ctrl.COURSE" id="courseScreen">
 
 </div>

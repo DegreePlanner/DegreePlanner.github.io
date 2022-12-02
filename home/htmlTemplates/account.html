@@ -1,0 +1,48 @@
+<div id="Name" class="accountInfoSection">
+    <div class="label4AccountInfo">
+        Name
+    </div>
+    <div class="infoSpace">
+        {{$ctrl.user}}
+    </div>
+</div>
+<div id="email" class="accountInfoSection">
+    <div class="label4AccountInfo">
+        Email
+    </div>
+    <div class="infoSpace">
+        {{$ctrl.email}}
+    </div>
+</div>
+<div id="password" class="accountInfoSection">
+    <div class="label4AccountInfo">
+        Password
+    </div>
+    <div class="infoSpace">
+        {{$ctrl.displayPassword()}}
+    </div>
+</div>
+<div id="Major" class="editableAccountInfoSection">
+    <div class="label4AccountInfo">
+        Major
+    </div>
+    <div class="infoSpace">
+        <div class="editableMajor" ng-if="$ctrl.m===$ctrl.EDITABLE">
+
+        </div>
+        <div class="protectedMajor" ng-if="$ctrl.m===$ctrl.PROTECTED">
+            {{$ctrl.major}}
+        </div>
+    </div>
+    <div class="EditSaveButton">
+        <div class="saveButton" ng-if="$ctrl.m===$ctrl.EDITABLE" ng-click="$ctrl.saveMajor()">
+
+        </div>
+        <div class="edit button" ng-if="$ctrl.m===$ctrl.PROTECTED" ng-click="$ctrl.m=$ctrl.EDITABLE">
+
+        </div>
+    </div>
+</div>
+<button id="logout" ng-click="$ctrl.logout()">
+    Logout
+</button>

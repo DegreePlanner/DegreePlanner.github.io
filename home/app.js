@@ -64,5 +64,9 @@ function MainController()
     this.pass = loginInfo["pass"];
     LoadData(this.user, this.pass);
     this.couresInfo = getFullCourseInfo();
+
+    logout = function() {
+        window.location.href =  window.location.href = '../login';
+    };
 }
 
