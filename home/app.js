@@ -66,7 +66,7 @@ function MainController()
     this.couresInfo = getFullCourseInfo();
 
     logout = function() {
-        window.location.href =  window.location.href = '../login';
+        window.location.href =  '../login';
     };
 }
 

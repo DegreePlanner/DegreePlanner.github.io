@@ -18,7 +18,7 @@ function ACCController() {
     this.m = this.PROTECTED;
 
     logout = function() {
-        window.location.href =  window.location.href = '../login';
+        window.location.href =  '../login';
     };
 
     saveMajor = function() {
