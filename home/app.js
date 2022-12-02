@@ -33,7 +33,7 @@ function MainController()
             }
             else if (sParameterName[0] === "pass")
             {
-                user = sParameterName[1];
+                pass = sParameterName[1];
             }
         }
         if(user == null || user === "") {
