@@ -32,11 +32,11 @@ function MainController()
             var sParameterName = sURLVariables[i].split('=');
             if (sParameterName[0] === "user")
             {
-                user = sParameterName[1];
+                user = atob(decodeURIComponent(sParameterName[1]));
             }
             else if (sParameterName[0] === "pass")
             {
-                pass = sParameterName[1];
+                pass = atob(decodeURIComponent(sParameterName[1]));
             }
         }
         if(user == null || user === "") {
@@ -50,9 +50,20 @@ function MainController()
     };
 
     this.LoadData = function(user, pass) {
-        var email = "email";
-        var major = "major";
-        return {email, major};
+        for (var i = 0; i < userData.length; i++)
+            if (userData[i].user === user) {
+                if(userData[i].pass === pass) {
+                    var email = userData[i].email;
+                    var major = userData[i].major;
+                    return {email, major};
+                }
+                else
+                {
+                    window.alert('System error please login again (your password was corrupted to: ' + pass + ")");
+                    window.location.href = '../login';
+                }
+            }
+
     };
 
     this.getFullCourseInfo = function () {
@@ -60,11 +71,11 @@ function MainController()
     };
 
     this.sampleuser = function () {
-        return "sampleUser";
+        return "SampleUser";
     };
 
     this.samplepass = function () {
-        return "samplePass";
+        return "SamplePass";
     };
 
     var userInfo = this.GetUserInfo();
