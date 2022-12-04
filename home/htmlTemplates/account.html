@@ -29,11 +29,32 @@
     <div class="infoSpace">
         <div class="editableMajor" ng-if="$ctrl.m===$ctrl.EDITABLE">
             <div class="dropdown">
-                <button onclick="{{$ctrl.dropclicked()}}" class="dropbtn">{{$ctrl.selected}}</button>
+                <button onclick="dropclick()" class="dropbtn">{{$ctrl.selected}}</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="#" ng-repeat="major in $ctrl.possibleMajors" ng-click="$ctrl.selected=major">{{major}}</a>
                 </div>
             </div>
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function dropclick() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
         </div>
         <div class="protectedMajor" ng-if="$ctrl.m===$ctrl.PROTECTED">
             {{$ctrl.major}}
@@ -43,7 +64,7 @@
         <div class="saveButton" ng-if="$ctrl.m===$ctrl.EDITABLE" ng-click="$ctrl.saveMajor()">
             <img class="changemajorButton" src="icons/save.png">
         </div>
-        <div class="edit button" ng-if="$ctrl.m===$ctrl.PROTECTED" ng-click="$ctrl.m=$ctrl.EDITABLE">
+        <div class="edit button" ng-if="$ctrl.m===$ctrl.PROTECTED" ng-click="$ctrl.m=$ctrl.EDITABLE; $ctrl.resetSelected()">
             <img class="changemajorButton" src="icons/edit.png">
         </div>
     </div>

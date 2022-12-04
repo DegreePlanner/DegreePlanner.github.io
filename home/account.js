@@ -34,8 +34,8 @@ function ACCController() {
         return passLength;
     };
 
-   this.dropclicked = function() {
-        document.getElementById("myDropdown").classList.toggle("show");
+   this.resetSelected = function() {
+        this.selected = this.major;
     }
 
 // Close the dropdown menu if the user clicks outside of it
