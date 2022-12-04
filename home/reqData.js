@@ -1,4 +1,4 @@
-MajorReqData = {
+majorReqData = {
     "Majors":
         [
         {
@@ -2243,7 +2243,9 @@ MajorReqData = {
                             "corequisites": null
                         },
                     ],
-                    "Select": 1
+                    "Select": 1,
+                    "Name": "Language"
+
                 },
                 /*SCIENCE*/
                 {
@@ -2506,7 +2508,8 @@ MajorReqData = {
                             "corequisites": null
                         },
                     ],
-                    "Select": 2
+                    "Select": 2,
+                    "Name": "Social Perspectives"
                 },
                 {
                     "courses": [
@@ -2691,7 +2694,8 @@ MajorReqData = {
                             "corequisites": null
                         },
                     ],
-                    "Select": 1
+                    "Select": 1,
+                    "Name": "Fine Arts Perspective"
                 },
                 /*Lit, Phil, Global,  */
             ]

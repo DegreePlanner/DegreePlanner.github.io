@@ -1,0 +1,226 @@
+<div class="reqSection">
+    <div class="ReqHeader">
+        General Education Requirements
+    </div>
+    <div class="allreq">
+        <div ng-repeat="course in $ctrl.getGenEdReqs().reqcourses">
+            <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                <div class="checkmark">
+                    <img class="checkbox" src="icons/checked-checkbox.png">
+                </div>
+                <div class="courseInfo">
+                    {{course.code}}
+                </div>
+            </div>
+            <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                <div class="checkableBox">
+                    <img class="checkbox" src="icons/unchecked-checkbox.png">
+                </div>
+                <div class="courseInfo">
+                    {{course.code}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="options">
+        <div ng-repeat="optionGroup in $ctrl.getGenEdReqs().options">
+            <div class="notTooManyCourses" ng-if="optionGroup.courses.length < $ctrl.MAXDISPLAY">
+                <div class="incompleteOptions" ng-if="!$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkable box">
+                            <img class="checkbox" src="icons/unchecked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the following courses
+                        </div>
+                    </div>
+                    <div ng-repeat="course in optionGroup.courses">
+                        <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                            <div class="checkmark">
+                                <img class="checkbox" src="icons/checked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                        <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                            <div class="checkableBox">
+                                <img class="checkbox" src="icons/unchecked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="completedOptions" ng-if="$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkmark">
+                            <img class="checkbox" src="icons/checked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the following courses
+                        </div>
+                    </div>
+                    <div ng-repeat="course in optionGroup.courses">
+                        <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                            <div class="checkmark">
+                                <img class="checkbox" src="icons/checked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                        <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                            <div class="checkableBox">
+                                <img class="checkbox" src="icons/unchecked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tooManyCourses" ng-if="optionGroup.courses.length >= $ctrl.MAXDISPLAY">
+                <div class="completedTooMany" ng-if="$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkmark">
+                            <img class="checkbox" src="icons/checked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the courses that satisfy the {{optionGroup.Name}} requirement
+                        </div>
+                    </div>
+                </div>
+                <div class="incompleteTooMany" ng-if="!$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkable box">
+                            <img class="checkbox" src="icons/unchecked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the courses that satisfy the {{optionGroup.Name}} requirement
+                            <div class="optionsHeader">
+                                {{optionGroup.Select - $ctrl.getCoursesLeft(optionGroup)}} Taken, leaving {{$ctrl.getCoursesLeft(optionGroup)}} Still Required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="reqSection">
+    <div class="ReqHeader">
+        {{$ctrl.major}} Major Requirements
+    </div>
+    <div class="allreq">
+        <div ng-repeat="course in $ctrl.getMajorReqs().reqcourses">
+            <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                <div class="checkmark">
+                    <img class="checkbox" src="icons/checked-checkbox.png">
+                </div>
+                <div class="courseInfo">
+                    {{course.code}}
+                </div>
+            </div>
+            <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                <div class="checkableBox">
+                    <img class="checkbox" src="icons/unchecked-checkbox.png">
+                </div>
+                <div class="courseInfo">
+                    {{course.code}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="options">
+        <div ng-repeat="optionGroup in $ctrl.getMajorReqs().options">
+            <div class="notTooManyCourses" ng-if="optionGroup.courses.length < $ctrl.MAXDISPLAY">
+                <div class="incompleteOptions" ng-if="!$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkable box">
+                            <img class="checkbox" src="icons/unchecked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the following courses
+                        </div>
+                    </div>
+                    <div ng-repeat="course in optionGroup.courses">
+                        <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                            <div class="checkmark">
+                                <img class="checkbox" src="icons/checked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                        <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                            <div class="checkableBox">
+                                <img class="checkbox" src="icons/unchecked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="completedOptions" ng-if="$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkmark">
+                            <img class="checkbox" src="icons/checked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the following courses
+                        </div>
+                    </div>
+                    <div ng-repeat="course in optionGroup.courses">
+                        <div class="completedCourse" ng-if="$ctrl.isTaken(course)">
+                            <div class="checkmark">
+                                <img class="checkbox" src="icons/checked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                        <div class="incompleteCourse" ng-if="!$ctrl.isTaken(course)">
+                            <div class="checkableBox">
+                                <img class="checkbox" src="icons/unchecked-checkbox.png">
+                            </div>
+                            <div class="courseInfo">
+                                {{course.code}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tooManyCourses" ng-if="optionGroup.courses.length >= $ctrl.MAXDISPLAY">
+                <div class="completedTooMany" ng-if="$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkmark">
+                            <img class="checkbox" src="icons/checked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the courses that satisfy the {{optionGroup.Name}} requirement
+                        </div>
+                    </div>
+                </div>
+                <div class="incompleteTooMany" ng-if="!$ctrl.isFinished(optionGroup)">
+                    <div class="optionsSection">
+                        <div class="checkable box">
+                            <img class="checkbox" src="icons/unchecked-checkbox.png">
+                        </div>
+                        <div class="optionsHeader">
+                            Take {{optionGroup.Select}} of the courses that satisfy the {{optionGroup.Name}} requirement
+                            <div class="optionsHeader">
+                                {{optionGroup.Select - $ctrl.getCoursesLeft(optionGroup)}} Taken, leaving {{$ctrl.getCoursesLeft(optionGroup)}} Still Required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

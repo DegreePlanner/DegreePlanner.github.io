@@ -71,13 +71,13 @@
     <account user="$ctrl.user" email="$ctrl.email" pass="$ctrl.pass" major="$ctrl.major" possible-majors="$ctrl.getPossibleMajors()"></account>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.SCHEDULE"  id="schedScreen">
-    <course-schedule courses=""></course-schedule>
+    <course-schedule courses="allcourses"></course-schedule>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" id="recScreen">
     <rec data=""></rec>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" id="reqScreen">
-    <req coursesCompleted="" major=""></req>
+    <req courses-completed="$ctrl.taken" major="$ctrl.major" major-reqs="$ctrl.getAllReqs()"></req>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.COURSE" id="courseScreen">
 
