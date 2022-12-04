@@ -90,8 +90,11 @@ function MainController()
     };
 
     this.getPossibleMajors = function () {
-        var list = ["Major 1", "Major 2"];
-        return list;
+        var listM = MajorReqData.Majors;
+        var listMajorNames = [MajorReqData.Majors.length];
+        for(var i = 0; i < listM.length; i++)
+            listMajorNames[i] = listM[i].Major;
+        return listMajorNames;
     }
 
 }

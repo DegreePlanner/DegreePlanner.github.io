@@ -14,16 +14,17 @@ angular.module('degreeplanner').component('account', {
 function ACCController() {
     this.EDITABLE = 1;
     this.PROTECTED = 0;
-
     this.m = this.PROTECTED;
+
+    this.selected = this.major;
 
     this.logout = function() {
         window.location.href =  '../login';
     };
 
     this.saveMajor = function() {
-
-
+        this.major = this.selected;
+        this.m=this.PROTECTED;
     };
 
     this.displayPassword = function() {
@@ -32,4 +33,11 @@ function ACCController() {
             passLength +="*";
         return passLength;
     };
+
+   this.dropclicked = function() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+// Close the dropdown menu if the user clicks outside of it
+
 }
