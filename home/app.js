@@ -6,9 +6,8 @@ app.component('main', {
 
 });
 
-function MainController()
-{
-    this.user ="";
+function MainController() {
+    this.user = "";
     this.pass = "";
     this.HOME = 0;
     this.ACCOUNT = 1;
@@ -22,43 +21,38 @@ function MainController()
     this.email = "";
     this.major = "";
 
-    this.GetUserInfo = function()
-    {
+    this.GetUserInfo = function () {
         var user = '', pass = '';
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++)
-        {
+        for (var i = 0; i < sURLVariables.length; i++) {
             var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] === "user")
-            {
+            if (sParameterName[0] === "user") {
                 user = atob(decodeURIComponent(sParameterName[1]));
-            }
-            else if (sParameterName[0] === "pass")
-            {
+            } else if (sParameterName[0] === "pass") {
                 pass = atob(decodeURIComponent(sParameterName[1]));
             }
         }
-        if(user == null || user === "") {
+        if (user == null || user === "") {
             user = this.sampleuser();
             pass = this.samplepass();
         }
         var info = this.LoadData(user, pass);
         var email = info["email"];
         var major = info["major"];
-        return {user, pass, email, major};
+        var taken = info["takenCourses"];
+        return {user, pass, email, major, taken};
     };
 
-    this.LoadData = function(user, pass) {
+    this.LoadData = function (user, pass) {
         for (var i = 0; i < userData.length; i++)
             if (userData[i].user === user) {
-                if(userData[i].pass === pass) {
+                if (userData[i].pass === pass) {
                     var email = userData[i].email;
                     var major = userData[i].major;
-                    return {email, major};
-                }
-                else
-                {
+                    var takenCourses = userData[i].takenCourses;
+                    return {email, major, takenCourses};
+                } else {
                     window.alert('System error please login again (your password was corrupted to: ' + pass + ")");
                     window.location.href = '../login';
                 }
@@ -83,16 +77,17 @@ function MainController()
     this.pass = userInfo["pass"];
     this.email = userInfo["email"];
     this.major = userInfo["major"];
+    this.taken = userInfo["taken"];
     this.couresInfo = this.getFullCourseInfo();
 
-    this.logout = function() {
-        window.location.href =  '../login';
+    this.logout = function () {
+        window.location.href = '../login';
     };
 
     this.getPossibleMajors = function () {
         var listM = MajorReqData.Majors;
         var listMajorNames = [MajorReqData.Majors.length];
-        for(var i = 0; i < listM.length; i++)
+        for (var i = 0; i < listM.length; i++)
             listMajorNames[i] = listM[i].Major;
         return listMajorNames;
     }
