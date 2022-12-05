@@ -14,18 +14,18 @@
         <div id="navAccount" class="nav-link" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
             {{$ctrl.user}}
         </div>
-        <div id="logout"class="nav-link" ng-click="$ctrl.logout()">
+        <div id="logout" class="nav-link" ng-click="$ctrl.logout()">
             Logout
         </div>
     </div>
 </div>
 
-<div ng-if="$ctrl.shown===$ctrl.HOME" id="homeScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.HOME" id="homeScreen">
     <div id="Welcome">
         Welcome {{$ctrl.user}}
     </div>
     <div id="Boxes">
-        <div id="AccountBox" ng-click="$ctrl.shown=$ctrl.ACCOUNT" >
+        <div id="AccountBox" class="mainBoxButton" ng-click="$ctrl.shown=$ctrl.ACCOUNT" >
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/account.png">
             </div>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <!--
-        <div id="ScheduleBox" ng-click="$ctrl.shown=$ctrl.SCHEDULE">
+        <div id="ScheduleBox" class="mainBoxButton" ng-click="$ctrl.shown=$ctrl.SCHEDULE">
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/schedule.png">
             </div>
@@ -43,7 +43,7 @@
             </div>
         </div>
         -->
-        <div id="RecommendationsBox" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" >
+        <div id="RecommendationsBox" class="mainBoxButton" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" >
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/rec.png">
             </div>
@@ -51,7 +51,7 @@
                 Course Recommendations
             </div>
         </div>
-        <div id="RequirementsBox" ng-click="$ctrl.shown=$ctrl.REQUIREMENTS" >
+        <div id="RequirementsBox" class="mainBoxButton" ng-click="$ctrl.shown=$ctrl.REQUIREMENTS" >
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/req.png">
             </div>
@@ -60,7 +60,7 @@
             </div>
         </div>
        <!--
-        <div id="AddCourseBox"  ng-click="$ctrl.shown=$ctrl.COURSE">
+        <div id="AddCourseBox"  class="mainBoxButton" ng-click="$ctrl.shown=$ctrl.COURSE">
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/course.png">
             </div>
@@ -71,18 +71,18 @@
         -->
     </div>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.ACCOUNT" id="accountScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.ACCOUNT" id="accountScreen">
     <account user="$ctrl.user" email="$ctrl.email" pass="$ctrl.pass" major="$ctrl.major" possible-majors="$ctrl.getPossibleMajors()"></account>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.SCHEDULE"  id="schedScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.SCHEDULE"  id="schedScreen">
     <course-schedule courses="allcourses"></course-schedule>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" id="recScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" id="recScreen">
     <rec courses-completed="$ctrl.taken" major="$ctrl.major" major-reqs="$ctrl.getAllReqs()"></rec>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" id="reqScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" id="reqScreen">
     <req courses-completed="$ctrl.taken" major="$ctrl.major" major-reqs="$ctrl.getAllReqs()"></req>
 </div>
-<div ng-if="$ctrl.shown===$ctrl.COURSE" id="courseScreen">
+<div class= "mainPage" ng-if="$ctrl.shown===$ctrl.COURSE" id="courseScreen">
 
 </div>

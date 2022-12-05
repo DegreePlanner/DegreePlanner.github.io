@@ -44,17 +44,19 @@ main {
 
 
 #navAccount {
-    padding-right: 20px;
+    margin-right: 20px;
     color: #ffffff;
     justify-self: center;
     align-self: center;
+    border: 2px solid white ;
 }
 
 #logout {
-    padding-right: 20px;
+    margin-right: 20px;
     color: #ffffff;
     justify-self: center;
     align-self: center;
+    border: 2px solid white ;
 }
 
 #navHome {
@@ -65,4 +67,8 @@ main {
 
 .navicon {
     width: 50px;
+}
+
+.mainPage {
+    margin-top: 100px;
 }

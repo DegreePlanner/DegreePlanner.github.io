@@ -1,0 +1,35 @@
+#Welcome {
+    font-size: 30px;
+}
+
+#Boxes {
+    display: flex;
+}
+
+.mainBoxButton {
+    background-color: #611317;
+    width: 30%;
+    align-self:center;
+    justify-self: center;
+    margin: 10px;
+}
+
+.mainIcon {
+    padding: 10px 10px 10px 10px;
+    width: 80%;
+
+    align-self:center;
+    justify-self: center;
+}
+.boxIcon {
+display: flex;
+    align-content:center;
+    justify-content: center;
+}
+
+.boxLabel {
+    color: #ffffff;
+    align-self:center;
+    justify-self: center;
+    text-align: center;
+}
