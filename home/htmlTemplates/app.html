@@ -4,17 +4,17 @@
             Degree Planner
         </div>
         <div id="navLogo">
-
+            <img class="navicon" src="icons/logo.png">
         </div>
     </div>
     <div id="navRight">
         <div id="navHome" ng-click="$ctrl.shown=$ctrl.HOME">
             <img class="navicon" src="icons/home.png">
         </div>
-        <div id="navAccount" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
+        <div id="navAccount" class="nav-link" ng-click="$ctrl.shown=$ctrl.ACCOUNT">
             {{$ctrl.user}}
         </div>
-        <div id="logout" ng-click="$ctrl.logout()">
+        <div id="logout"class="nav-link" ng-click="$ctrl.logout()">
             Logout
         </div>
     </div>
@@ -33,6 +33,7 @@
                 Account Information
             </div>
         </div>
+        <!--
         <div id="ScheduleBox" ng-click="$ctrl.shown=$ctrl.SCHEDULE">
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/schedule.png">
@@ -41,6 +42,7 @@
                 Course Schedule
             </div>
         </div>
+        -->
         <div id="RecommendationsBox" ng-click="$ctrl.shown=$ctrl.RECOMMENDATIONS" >
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/rec.png">
@@ -57,6 +59,7 @@
                 View Requirements
             </div>
         </div>
+       <!--
         <div id="AddCourseBox"  ng-click="$ctrl.shown=$ctrl.COURSE">
             <div class="boxIcon">
                 <img class="mainIcon" src="icons/course.png">
@@ -65,6 +68,7 @@
                 Add or Remove Courses Taken or Requirement Exceptions
             </div>
         </div>
+        -->
     </div>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.ACCOUNT" id="accountScreen">
@@ -74,7 +78,7 @@
     <course-schedule courses="allcourses"></course-schedule>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.RECOMMENDATIONS" id="recScreen">
-    <rec data=""></rec>
+    <rec courses-completed="$ctrl.taken" major="$ctrl.major" major-reqs="$ctrl.getAllReqs()"></rec>
 </div>
 <div ng-if="$ctrl.shown===$ctrl.REQUIREMENTS" id="reqScreen">
     <req courses-completed="$ctrl.taken" major="$ctrl.major" major-reqs="$ctrl.getAllReqs()"></req>

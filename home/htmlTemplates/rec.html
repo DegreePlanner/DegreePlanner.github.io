@@ -1,0 +1,16 @@
+<div class="columnHeadings">
+    <div>
+        Recommended Courses
+    </div>
+    <div>
+        Recommendation Weight
+    </div>
+</div>
+<div ng-repeat="row in $ctrl.getReccomendationsSorted()">
+    <div class="courseCodeRec">
+        {{row.code}}
+    </div>
+    <div class="recValue">
+        {{row.value}}
+    </div>
+</div>

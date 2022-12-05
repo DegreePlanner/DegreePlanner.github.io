@@ -1,0 +1,68 @@
+#navbar {
+    top:0;
+    position: fixed;
+    height: 100px;
+    display: flex;
+    width: 100%;
+    background: #611317;
+}
+
+#navLeft {
+    width: 50%;
+    display: flex;
+}
+
+#navRight {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    margin-right: 100px;
+}
+
+
+
+
+main {
+    margin: 50px 50px 50px 50px
+ }
+
+#navBarColor {
+    position: fixed;
+    height: 100px;
+    top:0;
+    width: 100%;
+    background: #611317;
+    text-decoration-color: #ffffff;
+}
+
+#navtitle {
+    color: #ffffff;
+    font-size: 20px;
+    justify-self: center;
+    align-self: center;
+}
+
+
+#navAccount {
+    padding-right: 20px;
+    color: #ffffff;
+    justify-self: center;
+    align-self: center;
+}
+
+#logout {
+    padding-right: 20px;
+    color: #ffffff;
+    justify-self: center;
+    align-self: center;
+}
+
+#navHome {
+    padding-right: 20px;
+    justify-self: center;
+    align-self: center;
+}
+
+.navicon {
+    width: 50px;
+}
