@@ -18,13 +18,13 @@ function RecController(ratingService) {
 
     this.sort = function(courses, values) {
         var sorted = [];
-        for(var i =0; i < courses.length; i++) {
+        for (var i = 0; i < courses.length; i++) {
             var greatestIndex = i;
-            for(var j=i+1; j < courses.length; j++) {
-                if(values[j] > values[greatestIndex])
+            for (var j = i + 1; j < courses.length; j++) {
+                if (values[j] > values[greatestIndex])
                     greatestIndex = j;
             }
-            if(values[greatestIndex] !== 0) {
+            if (values[greatestIndex] !== 0) {
                 var code = courses[greatestIndex];
                 var value = values[greatestIndex];
                 sorted[i] = {code, value};
@@ -40,5 +40,9 @@ function RecController(ratingService) {
             }
         }
         return sorted;
+    };
+
+    this.round = function(value) {
+        return Math.round(value);
     }
 }

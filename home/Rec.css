@@ -1,0 +1,14 @@
+.columnHeadings, .recrow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.courseCodeRec {
+    width: 40%;
+    text-align: center;
+}
+
+.recValue {
+    width: 40%;
+    text-align: center;
+}

@@ -1,16 +1,16 @@
 <div class="columnHeadings">
-    <div>
+    <div  class="courseCodeRec">
         Recommended Courses
     </div>
-    <div>
+    <div  class="recValue">
         Recommendation Weight
     </div>
 </div>
-<div ng-repeat="row in $ctrl.getReccomendationsSorted()">
+<div class="recrow" ng-repeat="row in $ctrl.getReccomendationsSorted()">
     <div class="courseCodeRec">
         {{row.code}}
     </div>
     <div class="recValue">
-        {{row.value}}
+        {{$ctrl.round(row.value)}}
     </div>
 </div>
