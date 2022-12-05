@@ -1,0 +1,15 @@
+.ReqHeader {
+    font-size: 20px;
+}
+
+.optionsSection, .completedCourse, .incompleteCourse {
+    display: flex;
+}
+
+.checkbox {
+    width: 20px;
+}
+
+.optioncourse {
+    margin-left: 50px;
+}
