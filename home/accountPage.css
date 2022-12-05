@@ -1,0 +1,28 @@
+.accountInfoSection, .editableAccountInfoSection{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.label4AccountInfo {
+    margin-right: 20px;
+    width: 40%;
+    justify-self: right;
+    justify-content: right;
+    justify-items: right;
+    text-align: right;
+}
+
+.changemajorButton {
+    width: 50px;
+    margin-left: 10px;
+}
+
+#logoutButton {
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    margin-left:40%;
+}

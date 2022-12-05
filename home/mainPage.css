@@ -4,6 +4,7 @@
 
 #Boxes {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .mainBoxButton {

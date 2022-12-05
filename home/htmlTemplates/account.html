@@ -61,14 +61,16 @@
         </div>
     </div>
     <div class="EditSaveButton">
-        <div class="saveButton" ng-if="$ctrl.m===$ctrl.EDITABLE" ng-click="$ctrl.saveMajor()">
+        <div class="saveButton stateButton" ng-if="$ctrl.m===$ctrl.EDITABLE" ng-click="$ctrl.saveMajor()">
             <img class="changemajorButton" src="icons/save.png">
         </div>
-        <div class="edit button" ng-if="$ctrl.m===$ctrl.PROTECTED" ng-click="$ctrl.m=$ctrl.EDITABLE; $ctrl.resetSelected()">
+        <div class="editButton stateButton" ng-if="$ctrl.m===$ctrl.PROTECTED" ng-click="$ctrl.m=$ctrl.EDITABLE; $ctrl.resetSelected()">
             <img class="changemajorButton" src="icons/edit.png">
         </div>
     </div>
 </div>
-<button id="logout" ng-click="$ctrl.logout()">
-    Logout
-</button>
+<div class="centerTheButton">
+    <button id="logoutButton" ng-click="$ctrl.logout()">
+        Logout
+    </button>
+</div>
