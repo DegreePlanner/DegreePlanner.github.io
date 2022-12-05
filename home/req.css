@@ -13,3 +13,11 @@
 .optioncourse {
     margin-left: 50px;
 }
+
+.allReqs {
+    display:flex;
+}
+.reqSection {
+    width: 50%;
+align-content: center
+}
